@@ -1,0 +1,84 @@
+# git的学习
+
+查看配置表
+
+```bash
+git config -l
+```
+
+修改配置
+
+```bash
+git config --global user.name '[username]'
+```
+
+# git基本理论
+
+![image-20230908204608237](C:\Users\junwe\AppData\Roaming\Typora\typora-user-images\image-20230908204608237.png)
+
+## 本地仓库搭建
+
+初始化
+
+```bash
+git init
+```
+
+文件存在4种状态
+
+- **untracked:**没有跟踪,通过git add状态变为staged
+
+- **unmodify:**文件已经进库
+
+- **modified:**文件已修改
+
+- **staged:**暂存状态
+
+查看文件状态
+
+```bash
+git status [filenames]
+```
+
+添加文件到暂存区
+
+```bash
+git add [filenames]
+git add . //当然文件夹里所有文件
+```
+
+暂存区文件到本地仓库
+
+```bash
+git commit -m '注释'
+```
+
+# 使用github
+
+## 设置本机绑定SSH公钥, 实现免密码登录
+
+1. windows:  C:\Users\Administrator\.ssh目录下
+
+```bash
+ssh-keygen -t rsa
+```
+
+> 官方推荐的rsa加密算法 , 将生成id_rsa.pub和id_rsa两个文件
+
+2. id_rsa.pub文件内容(ssh-rsa ...)复制到Key
+
+> Github > Settings > SSH and GPG keys > New SSH key > Key
+
+## 新建仓库
+
+许可证: GPL-3.0, GPL-2.0 开源但不能商业使用
+
+克隆到本地
+
+```bash
+git clone [http://....]
+```
+
+# IDEA中集成git
+
+使用中并不是用命令行去更新版本, 而是在编辑器中操作
