@@ -69,15 +69,24 @@ ssh-keygen -t rsa
 
 > Github > Settings > SSH and GPG keys > New SSH key > Key
 
-## 在github中新建仓库
+## 从本地到远程的流程
 
-许可证: GPL-3.0, GPL-2.0 开源但不能商业使用
+1. 在github中新建仓库
 
-将新建的仓库克隆到本地
+> 许可证: GPL-3.0, GPL-2.0 开源但不能商业使用, MIT许可证通常被认为是非常宽松的许可证
+
+2. 将新建的仓库克隆到本地
 
 ```bash
-git clone [http://....]
+git clone [http://....[repositories_name].git]
+cd [repositories_name]
 ```
 
-# 
+3. 完成修改文件后, 将本地仓库同步到远程仓库
+
+```bash
+git add .
+git commit -m "****"
+git push
+```
 
