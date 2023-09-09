@@ -69,16 +69,15 @@ ssh-keygen -t rsa
 
 > Github > Settings > SSH and GPG keys > New SSH key > Key
 
-## 新建仓库
+## 在github中新建仓库
 
 许可证: GPL-3.0, GPL-2.0 开源但不能商业使用
 
-克隆到本地
+将新建的仓库克隆到本地
 
 ```bash
 git clone [http://....]
 ```
 
-# IDEA中集成git
+# 
 
-使用中并不是用命令行去更新版本, 而是在编辑器中操作
