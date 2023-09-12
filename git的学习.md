@@ -87,6 +87,31 @@ cat ~/.ssh/id_rsa.pub
 
 > emmmmm,跟windows的一模一样
 
+** 遇到一个坑 **
+
+> 当git push时被要求Username for 'https://github.com':
+>
+> 输入了正确的账户和密码后
+>
+> remote: Support for password authentication was removed on August 13, 2021.
+
+解决方法
+
+```bash
+git config -l
+```
+
+找到这个:remote.origin.url=https://github.com/BunKUMA/study.git
+
+```bash
+git remote set-url origin git@github.com:BunKUMA/study.git
+git config -l
+```
+
+更新后: remote.origin.url=git@github.com:BunKUMA/study.git
+
+然后再git push就正常了
+
 ## 从本地到远程的流程
 
 1. 在github中新建仓库
