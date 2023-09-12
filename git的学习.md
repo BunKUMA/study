@@ -57,7 +57,9 @@ git commit -m '注释'
 
 ## 设置本机绑定SSH公钥, 实现免密码登录
 
-1. windows:  C:\Users\Administrator\.ssh目录下
+### windows:
+
+1. C:\[users]\Administrator\.ssh目录下
 
 ```bash
 ssh-keygen -t rsa
@@ -69,6 +71,22 @@ ssh-keygen -t rsa
 
 > Github > Settings > SSH and GPG keys > New SSH key > Key
 
+### ubuntu:
+
+1.~/目录下
+
+```bash
+ssh-keygen -t rsa
+```
+
+2.id_rsa.pub文件内容(ssh-rsa ...)复制到Key
+
+```bash
+cat ~/.ssh/id_rsa.pub
+```
+
+> emmmmm,跟windows的一模一样
+
 ## 从本地到远程的流程
 
 1. 在github中新建仓库
@@ -79,12 +97,12 @@ ssh-keygen -t rsa
 
 ```bash
 git clone [http://....[repositories_name].git]
-cd [repositories_name]
 ```
 
 3. 完成修改文件后, 将本地仓库同步到远程仓库
 
 ```bash
+cd [repositories_name]
 git add .
 git commit -m "****"
 git push
