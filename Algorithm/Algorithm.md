@@ -2,7 +2,7 @@ Algorithm
 
 1. 快速排序算法
 
-   ![](img\quick_sort.png)
+   ![](https://github.com/BunKUMA/study/blob/main/Algorithm/img/quick_sort.png)
 
    ```python
    def partition(arr,left,r):
