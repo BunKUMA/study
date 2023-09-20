@@ -104,6 +104,80 @@
 
 3. ## 归并排序
 
+   ## 基本思想
+
+   (1)两分区从小到大合并
+
+   (2)递归二分
+
+   ### 两分区从小到大合并
+
+   left, right, index的值会变, L,R,mid值不变
+
+   有3种情况需要考虑: (1) 两半区都有数 (2)只有左半区有数 (3)只有右半区有数
+
+   > 情况(2):当左半区拷贝完时, 右半区直接接上
+
+   ```python
+   def merge(arr, tmparr, L:int, mid:int, R:int):
+       left = L        # 左半区第一个下标
+       right = mid + 1 # 右半区第一个下标
+       index = L       # 临时数组下标
+       
+       # 两半区都有数
+       while left <= mid and right <= R :
+           if arr[left] < arr[right]:
+               tmparr[index] = arr[left]
+               index += 1
+               left += 1
+           else :
+               tmparr[index] = arr[right]
+               index += 1
+               right += 1
+               
+       # 只有左半区有数
+       while left <= mid:
+           tmparr[index] = arr[left]
+           index += 1
+           left += 1
+           
+       # 只有右半区有数
+       while right <= R:
+           tmparr[index] = arr[right]
+           index += 1
+           right += 1
+       
+       #排好序的tmp复制到arr
+       while L <= R:
+           arr[L] = tmparr[L]
+           L += 1
+   ```
+
+   > 利用下标来判断分区是否为空
+
+   ### 递归二分
+
+   一边递归二分, 一边分到底再合并
+
+   ```python
+   def msort(arr, tmparr, L:int, R:int):
+       if L < R:
+           mid = int((L + R) / 2)
+           msort(arr, tmparr, L, mid)
+           msort(arr, tmparr, mid+1, R)
+           merge(arr, tmparr, L , mid, R)
+   ```
+
+   ```python
+   def merge_sort(arr, n:int):
+       tmparr = [i for i in range(n)]
+       msort(arr, tmparr, 0, n-1)
+       
+    merge_sort(arr,len(arr))
+   ```
+
+   > 视频参考: B站 BV1Pt4y197VZ
+
 4. ## 二分查找算法
 
 5. ## BFPRT（线性查找算法）
