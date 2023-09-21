@@ -180,6 +180,52 @@
 
 4. ## 二分查找算法
 
+   前提:在一个有序数组中, 找到target, 返回坐标
+
+   常见的四个问题:
+
+   问题1 找到第一个>=target的元素
+
+   问题2 找到最后一个<target的元素
+
+   问题3 找到第一个>target的元素
+
+   问题4 找到最后一个<=target的元素
+
+   ## 基本思路
+
+   (1) 考虑哪些数是左边区域, 哪些数是右边区域
+
+   (2) 思考什么条件才能将数判定为左边区域
+
+   (3)
+
+   ### 问题1
+
+   找到第一个>=target的元素
+
+   ```python
+   def is_left_area(arr, mid, target):
+       # 第一个>= target
+       if arr[mid] < target:
+           return True
+       else:
+           return False
+   
+   def binarySearch(target, arr, n):
+       left = -1
+       right = n
+       while left+1 != right:
+           mid = int((left+right)/2)
+           if is_left_area(arr, mid, target):
+               left = mid
+           else:
+               right = mid
+       return right
+   ```
+
+   > 如果不存在大于等于target的元素, 会返回n
+
 5. ## BFPRT（线性查找算法）
 
 6. ## DFS（深度优先搜索）
