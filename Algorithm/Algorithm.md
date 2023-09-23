@@ -198,15 +198,16 @@
 
    (2) 思考什么条件才能将数判定为左边区域
 
-   (3)
+   (3) 根据题目返回分界线左边还是右边
 
-   ### 问题1
+   ### 问题1, 2
 
-   找到第一个>=target的元素
+   问题1 找到第一个>=target的元素
+
+   问题2 找到最后一个<target的元素
 
    ```python
    def is_left_area(arr, mid, target):
-       # 第一个>= target
        if arr[mid] < target:
            return True
        else:
@@ -221,12 +222,53 @@
                left = mid
            else:
                right = mid
-       return right
+       return right	# 问题1时返回right
+   	## 问题2时返回left
+   	#if left != -1:
+       #    return left
+       #else:
+       #    raise Exception("list index out of range")	
    ```
 
    > 如果不存在大于等于target的元素, 会返回n
+   >
+   > 因为使用的是python, 所以不存在时返回不能为-1
+
+   ### 问题3, 4
+
+   问题3 找到第一个>target的元素
+
+   问题4 找到最后一个<=target的元素
+
+   ```python
+   def is_left_area(arr, mid, target):
+       if arr[mid] <= target:	# 只修改了判断条件
+           return True
+       else:
+           return False
+   
+   def binarySearch(target, arr, n):
+       left = -1
+       right = n
+       while left+1 != right:
+           mid = int((left+right)/2)
+           if is_left_area(arr, mid, target):
+               left = mid
+           else:
+               right = mid
+       return right	# 问题3时返回right
+   	## 问题4时返回left
+   	#if left != -1:
+       #    return left
+       #else:
+       #    raise Exception("list index out of range")
+   ```
+
+   
 
 5. ## BFPRT（线性查找算法）
+
+   没有找到学习的参考材料
 
 6. ## DFS（深度优先搜索）
 
