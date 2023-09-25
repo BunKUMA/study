@@ -1,6 +1,6 @@
 # 入门
 
-![](https://github.com/BunKUMA/study/tree/main/cpp/Screenshot.png)
+<img src="https://github.com/BunKUMA/study/blob/main/cpp/Screenshot.png" alt="learning_guide" style="zoom:75%;" />
 
 # 进阶
 
