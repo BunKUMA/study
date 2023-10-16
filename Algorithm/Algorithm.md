@@ -264,13 +264,13 @@
        #    raise Exception("list index out of range")
    ```
 
-   
-
 5. ## BFPRT（线性查找算法）
 
    没有找到学习的参考材料
 
 6. ## DFS（深度优先搜索）
+
+   两种数据结构:图, 树
 
 7. ## BFS（广度优先搜索）
 
